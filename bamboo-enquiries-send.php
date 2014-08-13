@@ -1,8 +1,8 @@
 <?php
 /******************************************************************/
 
-	$to_address    	= $_POST["noodle_enquiry_form_to_address"];    	// ADDRESS TO SEND ENQUIRIES TO
-	$from_address  	= $_POST["noodle_enquiry_form_from_address"];	// ADDRESS TO SEND ENQUIRIES FROM
+	$to_address    	= $_POST["bamboo_enquiry_form_to_address"];    	// ADDRESS TO SEND ENQUIRIES TO
+	$from_address  	= $_POST["bamboo_enquiry_form_from_address"];	// ADDRESS TO SEND ENQUIRIES FROM
 	$reply_address	= $from_address;                               	// DEFAULT REPLY ADDRESS IF ONE IS NOT SUPPLEID
 	$subject       	= 'Website Enquiry';                           	// START OF THE EMAIL SUBJECT
 	$intro         	= '<p>There has been an enquiry sent from your website, the details are below:</p>'; // INTRO TO THE EMAIL
@@ -10,7 +10,7 @@
 	// ESTABLISH IF THE FORM IS BLANK
 	$all_blank = true;
 	foreach ( $_POST as $key => $value ) {
-		if ( ( substr( $key, 0, 20) != "noodle_enquiry_form_" && $key != "undefined" ) && ( $value != '' ) ) {
+		if ( ( substr( $key, 0, 20) != "bamboo_enquiry_form_" && $key != "undefined" ) && ( $value != '' ) ) {
 			$all_blank = false;
 		}
 	}
@@ -30,7 +30,7 @@
 		// CONSTRUCT THE FORM CONTENT
 		$content = "<html><head><title>$subject</title></head><body>$intro";
 		foreach ( $_POST as $key => $value ) {
-			if( substr( $key, 0, 20 ) != "noodle_enquiry_form_" && $key != "undefined" ) {
+			if( substr( $key, 0, 20 ) != "bamboo_enquiry_form_" && $key != "undefined" ) {
 				if( is_array( $value ) ) {
 					$text = '';
 					foreach( $value as $val ) {
@@ -45,6 +45,17 @@
 				$content .= "<p><strong>" . str_replace( "_", " ", $key ) . ":</strong>&nbsp;" . $text . "</p>";
 			}
 		}
+
+		$cv_attached = false;
+		foreach ( $_FILES as $key => $value ) {
+			if($_FILES[$key]["size"]>0) {
+				$cv_attached = true;
+			}
+		}
+		if( true==$cv_attached ) {
+			$content .= "<p><strong>C.V. Attached</strong></p>";
+		}
+
 		$content .= "</body></html>";
 
 		// CONSTRUCT THE MESSAGE

@@ -5,7 +5,7 @@ Plugin Name: Bamboo Enquiries
 Plugin URI:  http://www.bamboosolutions.co.uk/wordpress/bamboo-enquiries
 Author:      Bamboo Solutions
 Author URI:  http://www.bamboosolutions.co.uk
-Version:     1.2
+Version:     1.3
 Description: Turn any web form into a flexible enquiry form, enabling you to have multiple enquiry forms throughout your website.
 */
 /******************************************************************/
@@ -48,7 +48,7 @@ Description: Turn any web form into a flexible enquiry form, enabling you to hav
 		$html.= "\" method=\"post\" action=\"$path/bamboo-enquiries-send.php\">";
 		$html.= "<input type=\"hidden\" name=\"bamboo_enquiry_form_to_address\" value=\"$to\"/>";
 		$html.= "<input type=\"hidden\" name=\"bamboo_enquiry_form_from_address\" value=\"$from\"/>";
-		$html.= $content;
+		$html.= do_shortcode($content);
 		$html.= "</form>";
 
 		do_action( 'after_bamboo_enquiry' );

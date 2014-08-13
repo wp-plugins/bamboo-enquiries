@@ -47,9 +47,8 @@
 				});
 
 				jQuery('.bamboo_enquiry input[type="text"], .bamboo_enquiry textarea').each(function(){
-
 					var input = jQuery(this);
-					var label = input.prev();
+					var label = input.siblings('label[for="' + input.attr('name') + '"]');
 					var text = input.val();
 					var prompt = label.html();
 					var promptLastChar = prompt.substr(prompt.length-1);
@@ -60,14 +59,13 @@
 							input.removeClass('error');
 						}
 					}
-
 				});
 
 				if(jQuery('.bamboo_enquiry .error').length>0) {
 					return false;
 				}
 
-				return false;
+				return true;
 
 			});
 		});

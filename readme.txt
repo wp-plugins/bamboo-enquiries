@@ -4,7 +4,7 @@ Donate link: http://www.bamboosolutions.co.uk
 Tags: enquiries, contact form, shortcodes
 Requires at least: 3.0.1
 Tested up to: 3.9.2
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Turn any web form into a flexible enquiry form, enabling you to have multiple en
 
 == Description ==
 
-Bamboo Enquiries turns any web form into flexible enquiry form, enabling you to have multiple enquiry forms throughout your website. By just wrapping a simple shortcode around the HTML elements of your choice, you can have a professional, simple or complicated email enquiry form up and running in minutes.
+Noodle Enquiries turns any web form into flexible enquiry form, enabling you to have multiple enquiry forms throughout your website. By just wrapping a simple shortcode around the HTML elements of your choice, you can have a professional, simple or complicated email enquiry form up and running in minutes.
 
 It supports all standard form elements, including file uploads. It also provides an ‘auto labels’ option which presents the labels for each input box inside the input as the default value until it is clicked on (the Twitter sign in page is a good example of this in action). Finally the shortcode also supports mandatory text boxes, the form will not be submitted if any mandatory boxes have not be filled in. Simply adding as asterisk (*) to the end of a label will indicate that the following input is mandatory, e.g. :
 
