@@ -46,14 +46,14 @@
 			}
 		}
 
-		$cv_attached = false;
+		$file_attached = false;
 		foreach ( $_FILES as $key => $value ) {
 			if($_FILES[$key]["size"]>0) {
-				$cv_attached = true;
+				$file_attached = true;
 			}
 		}
-		if( true==$cv_attached ) {
-			$content .= "<p><strong>C.V. Attached</strong></p>";
+		if( true==$file_attached ) {
+			$content .= "<p><strong>File Attached</strong></p>";
 		}
 
 		$content .= "</body></html>";
@@ -79,10 +79,10 @@
 		// SEND THE MESSAGE
 		mail( $to_address, $subject, $message, $headers );
 
-		// REDIRECT BACK TO CALLING PAGE
-    		header("Location: ".$_SERVER['HTTP_REFERER']."?sent");
-
 	}
+
+	// REDIRECT BACK TO CALLING PAGE
+    header("Location: ".$_SERVER['HTTP_REFERER']."?sent");
 
 /******************************************************************/
 ?>
