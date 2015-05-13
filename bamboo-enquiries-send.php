@@ -1,5 +1,5 @@
 <?php
-/******************************************************************/
+/**************************************************************************************************/
 
 	$to_address    	= $_POST["bamboo_enquiry_form_to_address"];    	// ADDRESS TO SEND ENQUIRIES TO
 	$from_address  	= $_POST["bamboo_enquiry_form_from_address"];	// ADDRESS TO SEND ENQUIRIES FROM
@@ -84,5 +84,5 @@
 	// REDIRECT BACK TO CALLING PAGE
     header("Location: ".$_SERVER['HTTP_REFERER']."?sent");
 
-/******************************************************************/
+/**************************************************************************************************/
 ?>

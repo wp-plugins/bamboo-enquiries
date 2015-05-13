@@ -1,8 +1,23 @@
-/******************************************************************/
+/**************************************************************************************************/
+
+     function queryString()
+     {
+         var vars = [], hash;
+         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+         for(var i = 0; i < hashes.length; i++)
+         {
+             hash = hashes[i].split('=');
+             vars.push(hash[0]);
+             vars[hash[0]] = hash[1];
+         }
+         return vars;
+     }
+
+/**************************************************************************************************/
 
 	jQuery(document).ready(function(){
 
-		if(queryString()=="sent") {
+		if(queryString()==="sent") {
 			jQuery('.bamboo_enquiry').empty();
 			jQuery('.bamboo_enquiry').append('<div class="bamboo_enquiry_confirm"><h3>Thank you for your enquiry</h3><h4>We will get back to you as soon as possible</h4></div>');
 		}
@@ -17,13 +32,13 @@
 			label.hide();
 
 			input.blur(function(){
-				if(input.val()=='') {
+				if(input.val()==='') {
 					input.val(prompt);
 				}
 			});
 
 			input.focus(function(){
-				if(input.val()==prompt) {
+				if(input.val()===prompt) {
 					input.val('');
 					input.removeClass('error');
 				}
@@ -40,7 +55,7 @@
 					var label = input.prev();
 					var text = input.val();
 					var prompt = label.html();
-					if (text==prompt) {
+					if (text===prompt) {
 						input.val('');
 						text = '';
 					}
@@ -52,8 +67,8 @@
 					var text = input.val();
 					var prompt = label.html();
 					var promptLastChar = prompt.substr(prompt.length-1);
-					if('*'==promptLastChar) {
-						if(''==text) {
+					if('*'===promptLastChar) {
+						if(''===text) {
 							input.addClass('error');
 						} else {
 							input.removeClass('error');
@@ -72,19 +87,4 @@
 
 	});
 
-/******************************************************************/
-
-     function queryString()
-     {
-         var vars = [], hash;
-         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-         for(var i = 0; i < hashes.length; i++)
-         {
-             hash = hashes[i].split('=');
-             vars.push(hash[0]);
-             vars[hash[0]] = hash[1];
-         }
-         return vars;
-     }
-
-/******************************************************************/
+/**************************************************************************************************/

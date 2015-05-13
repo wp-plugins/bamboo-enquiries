@@ -1,37 +1,32 @@
 <?php
-/******************************************************************/
+/**************************************************************************************************/
 /*
 Plugin Name: Bamboo Enquiries
 Plugin URI:  http://www.bamboosolutions.co.uk/wordpress/bamboo-enquiries
 Author:      Bamboo Solutions
 Author URI:  http://www.bamboosolutions.co.uk
-Version:     1.4
+Version:     1.5
 Description: Turn any web form into a flexible enquiry form, enabling you to have multiple enquiry forms throughout your website.
 */
-/******************************************************************/
-
-	add_action( 'init', 'bamboo_enquires_init' );
-
-	add_shortcode( 'bamboo-enquiry', 'bamboo_enquiries_shortcode' );
-
-/******************************************************************/
+/**************************************************************************************************/
 
 	function bamboo_enquires_init() {
 
 		$path = plugins_url( '', __FILE__ );
 
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bamboo-enquiries', $path.'/bamboo-enquiries.js' ,'jquery', null, true );
+		wp_enqueue_script( 'bamboo-enquiries', $path.'/bamboo-enquiries.min.js' ,'jquery', null, true );
 
 		if( function_exists( 'bamboo_enqueue_style' ) ) {
 			bamboo_enqueue_style( 'bamboo-enquiries', $path . '/bamboo-enquiries.css' );
 		} else {
-			wp_enqueue_style( 'bamboo-enquiries', $path . '/bamboo-enquiries.css' );
+			wp_enqueue_style( 'bamboo-enquiries', $path . '/bamboo-enquiries.css', array(), null );
 		}
 
 	}
+	add_action( 'init', 'bamboo_enquires_init' );
 
-/******************************************************************/
+/**************************************************************************************************/
 
 	function bamboo_enquiries_shortcode ( $atts, $content=null ) {
 
@@ -60,6 +55,7 @@ Description: Turn any web form into a flexible enquiry form, enabling you to hav
 		return $html;
 
 	}
+	add_shortcode( 'bamboo-enquiry', 'bamboo_enquiries_shortcode' );
 
-/******************************************************************/
+/**************************************************************************************************/
 ?>
