@@ -82,7 +82,13 @@
 	}
 
 	// REDIRECT BACK TO CALLING PAGE
-    header("Location: ".$_SERVER['HTTP_REFERER']."?sent");
+	$refer = $_SERVER['HTTP_REFERER'];
+	if( 0< strpos( $refer, '?' ) ) {
+		$refer.= '&sent';
+	} else {
+		$refer.='?sent';
+	}
+    header("Location: " . $refer);
 
 /**************************************************************************************************/
 ?>

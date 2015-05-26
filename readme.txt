@@ -4,7 +4,7 @@ Donate link: http://www.bamboosolutions.co.uk
 Tags: enquiries, contact form, shortcodes
 Requires at least: 3.0.1
 Tested up to: 4.2.2
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,10 @@ Finally, instead of wrapping your form elements in a form tag, simply wrap them 
 The ‘from’ attribute sets the email address that the enquiry will be sent from, and the ‘to’ attribute sets the address it will be sent to. The ‘auto_labels’ attribute actives the auto labels feature as described above.
 
 == Changelog ==
+
+= 1.6 =
+
+* Improved handling of 'sent' flag
 
 = 1.5 =
 * Updated CSS delivery to help improve Google PageSpeed scores

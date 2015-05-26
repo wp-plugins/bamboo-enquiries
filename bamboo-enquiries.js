@@ -17,9 +17,16 @@
 
 	jQuery(document).ready(function(){
 
-		if(queryString()==="sent") {
+		var sent = false;
+		var qs = queryString();
+		for (index = 0; index < qs.length; ++index) {
+    		if( 'sent'===qs[index] ) {
+    			sent = true;
+    		}
+    	}
+		if( sent ) {
 			jQuery('.bamboo_enquiry').empty();
-			jQuery('.bamboo_enquiry').append('<div class="bamboo_enquiry_confirm"><h3>Thank you for your enquiry</h3><h4>We will get back to you as soon as possible</h4></div>');
+			jQuery('.bamboo_enquiry').append('<div class="bamboo_enquiry_confirm"><h4>Thank you for your enquiry</h4><h4>We will get back to you as soon as possible</h4></div>');
 		}
 
 		jQuery('.bamboo_enquiry.auto_labels input[type="text"], .bamboo_enquiry.auto_labels textarea').each(function(){

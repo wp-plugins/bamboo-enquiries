@@ -5,7 +5,7 @@ Plugin Name: Bamboo Enquiries
 Plugin URI:  http://www.bamboosolutions.co.uk/wordpress/bamboo-enquiries
 Author:      Bamboo Solutions
 Author URI:  http://www.bamboosolutions.co.uk
-Version:     1.5
+Version:     1.6
 Description: Turn any web form into a flexible enquiry form, enabling you to have multiple enquiry forms throughout your website.
 */
 /**************************************************************************************************/
