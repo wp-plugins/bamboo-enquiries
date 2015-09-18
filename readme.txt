@@ -1,5 +1,5 @@
 === Bamboo Enquiries ===
-Contributors: Bamboo Solutions
+Contributors: bamboosolutions
 Donate link: http://www.bamboosolutions.co.uk
 Tags: enquiries, contact form, shortcodes
 Requires at least: 3.0.1
@@ -24,11 +24,11 @@ Code your form elements as you normally would, with whichever inputs, radio butt
 
 Add at least one submit button e.g:
 
-     <button type=“submit”>Send Enquiry”</button>
+     <button type=“submit">Send Enquiry"</button>
 
 Finally, instead of wrapping your form elements in a form tag, simply wrap them in the Bamboo Enquiries shortcode instead:
 
-     [bamboo-enquiry from=“website@bamboosolutions.co.uk” to=“enquiries@bamboosolutions.co.uk” auto_labels="on"]
+     [bamboo-enquiry from="website@bamboosolutions.co.uk" to=“enquiries@bamboosolutions.co.uk" auto_labels="on"]
           Your form elements here (don’t forget the submit button)
      [/bamboo-enquiry]
 
